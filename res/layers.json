@@ -6,5 +6,24 @@
     "endFrame": 1000,
     "color": "red",
     "config": {}
+  },
+  {
+    "type": "TextOverlayLayer",
+    "displayName": "Welcome",
+    "startFrame": 200,
+    "endFrame": 600,
+    "color": "red",
+    "config": {
+      "offset": {
+        "x": -1,
+        "y": 3
+      },
+      "flip": true,
+      "title": "Welcome to",
+      "body": [
+        "Ninjacon!",
+        "~ A place of happiness ~"
+      ]
+    }
   }
 ]
