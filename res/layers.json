@@ -1,0 +1,10 @@
+[
+  {
+    "type": "superLayer",
+    "displayName": "Super",
+    "startFrame": 0,
+    "endFrame": 1000,
+    "color": "red",
+    "config": {}
+  }
+]
