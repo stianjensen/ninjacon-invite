@@ -6,10 +6,6 @@ function superLayer(layer) {
   this.scene = new THREE.Scene();
 
   this.camera = new THREE.PerspectiveCamera(45, 16 / 9, 1, 10000);
-  this.cube = new THREE.Mesh(new THREE.BoxGeometry(50, 5, 5),
-                             new THREE.MeshBasicMaterial({ color: 0x000fff }));
-
-  this.scene.add(this.cube);
 
   var light = new THREE.PointLight( 0xffffff, 1, 100 );
   light.position.set( -50, -50, -50 );
@@ -24,6 +20,14 @@ function superLayer(layer) {
   this.camera.position.z = 100;
 
   this.renderPass = new THREE.RenderPass(this.scene, this.camera);
+
+  var that = this;
+  Loader.loadAjax('res/pirate-ship-giant.json', function(response) {
+    var loader = new THREE.ObjectLoader();
+    that.ship = loader.parse(JSON.parse(response));
+    that.ship.position.set(0, -1, 90);
+    that.scene.add(that.ship);
+  });
 }
 
 superLayer.prototype.getEffectComposerPass = function() {
@@ -40,6 +44,7 @@ superLayer.prototype.resize = function() {
 };
 
 superLayer.prototype.update = function(frame, relativeFrame) {
-  this.cube.rotation.x = Math.sin(frame / 10);
-  this.cube.rotation.y = Math.cos(frame / 10);
+  if (this.ship) {
+    this.ship.rotation.y = relativeFrame / 100;
+  }
 };
