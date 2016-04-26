@@ -46,6 +46,40 @@ function superLayer(layer) {
   this.discoball.scale.set(scale, scale, scale);
   this.discoball.position.set(0, 10, 0);
 
+  var displacementMap = document.createElement('canvas');
+  displacementMap.width = 1024;
+  displacementMap.height = 1024;
+  var displacementMapCtx = displacementMap.getContext('2d');
+  var imageData = displacementMapCtx.getImageData(0, 0, 1024, 1024);
+  var discorandom = Random('disco');
+  var offset = 0;
+  for(var i = 0; i < imageData.data.length; i += 4) {
+    imageData.data[i] = offset + discorandom() * (255 - offset) | 0;
+    imageData.data[i + 1] = offset + discorandom() * (255 - offset) | 0;
+    imageData.data[i + 2] = offset + discorandom() * (255 - offset) | 0;
+    imageData.data[i + 3] = 255;
+  }
+  displacementMapCtx.putImageData(imageData, 0, 0);
+  var displacementMapTexture = new THREE.Texture(displacementMap);
+  displacementMapTexture.needsUpdate = true;
+  this.discoballrays = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1, 5),
+    new THREE.MeshStandardMaterial({
+      shading: THREE.SmoothShading,
+      metalness: 0,
+      roughness: 1,
+      emissive: 0xffffff,
+      displacementMap: displacementMapTexture,
+      displacementScale: 3,
+      transparent: true,
+      opacity: 0.01,
+      alphaMap: displacementMapTexture
+    }));
+  this.scene.add(this.discoballrays);
+  var scale = 50;
+  this.discoballrays.scale.set(scale, scale, scale);
+  this.discoballrays.position.set(0, 10, 0);
+
 
   var pointLight = new THREE.PointLight(0xFFFFFF);
   pointLight.position.x = 10;
@@ -127,6 +161,9 @@ superLayer.prototype.update = function(frame, relativeFrame) {
   this.discoball.position.y = smoothstep(-100, 100, (relativeFrame - 1200) / 200);
   this.discoball.rotation.z = relativeFrame / 170;
 
+  this.discoballrays.position.copy(this.discoball.position);
+  this.discoballrays.rotation.copy(this.discoball.rotation);
+
   if(BEAT && BEAN % 6 == 0) {
     this.light.intensity = 1;
   }
@@ -135,4 +172,10 @@ superLayer.prototype.update = function(frame, relativeFrame) {
     this.light.intensity = 1;
   }
   this.water.sunColor.setRGB(this.light.intensity, this.light.intensity, this.light.intensity);
+  this.discoballrays.material.opacity = Math.pow(this.light.intensity * 0.4, 4);
+  if(frame <= 1300) {
+    this.scene.remove(this.discoballrays);
+  } else {
+    this.scene.add(this.discoballrays);
+  }
 };
