@@ -1,13 +1,5 @@
 [
   {
-    "type": "shipLayer",
-    "displayName": "Ship",
-    "startFrame": 0,
-    "endFrame": 1232,
-    "color": "red",
-    "config": {}
-  },
-  {
     "type": "laptopLayer",
     "displayName": "Laptop",
     "startFrame": 1218,
