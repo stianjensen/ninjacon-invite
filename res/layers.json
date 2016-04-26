@@ -30,7 +30,7 @@
                     { "text": "Ninjadev cordially invites you", "color": "#ffffbb"},
                     { "text": "and your friends to come to:", "color": "#ffffbb"},
                     { "text": "", "color": "#ffffbb" },
-                    { "text": "☆ Ninjacon 2016: Sea Shark ☆", "color": "#88ff88"}
+                    { "text": "\u2606 Ninjacon 2016: Sea Shark \u2606", "color": "#88ff88"}
                 ]
             }, {
                 "startRelativeFrame": 380,
@@ -39,15 +39,15 @@
                     { "text": "", "color": "#ffffbb" },
                     { "text": "Enjoy a weekend of", "color": "#ffffbb" },
                     { "text": "hacking and fun at", "color": "#ffffbb" },
-                    { "text": "Jordalsgrenda", "color": "#88ff88" },
-                    { "text": "29. April - 1. May", "color": "#88ff88" }
+                    { "text": "       Jordalsgrenda", "color": "#88ff88" },
+                    { "text": "    29. April - 1. May", "color": "#88ff88" }
                 ]
             }, {
                 "startRelativeFrame": 690,
                 "endRelativeFrame": 1186,
                 "lines":[
                     { "text": "You can experience:                       ", "color": "white" },
-                    { "text": "Intriguing talks ✌✌", "color": "#ffffbb" }
+                    { "text": "Intriguing talks \u270c\u270c", "color": "#ffffbb" }
                 ]
             }, {
                 "startRelativeFrame": 794,
@@ -55,7 +55,7 @@
                 "lines":[
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
-                    { "text": "          ❤ Scrumptious food ❤", "color": "#ff88ff" }
+                    { "text": "          \u2764 Scrumptious food \u2764", "color": "#ff88ff" }
                 ]
             }, {
                 "startRelativeFrame": 859,
@@ -64,7 +64,7 @@
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
-                    { "text": "    ❅ Tittilating code golf ❅", "color": "#8888ff" }
+                    { "text": "    \u2745 Tittilating code golf \u2745", "color": "#8888ff" }
                 ]
             }, {
                 "startRelativeFrame": 909,
@@ -74,7 +74,7 @@
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
-                    { "text": " Veritable hacking  ☜(⌒▽⌒)☞", "color": "#88ff88" }
+                    { "text": " Veritable hacking  \u261c(\u2312\u25bd\u2312)\u261e", "color": "#88ff88" }
                 ]
             }, {
                 "startRelativeFrame": 948,
@@ -85,7 +85,7 @@
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
-                    { "text": "       ⚘⚘ Real Fresh Air! ⚘⚘", "color": "#ff8888" }
+                    { "text": "       \u2698\u2698 Real Fresh Air! \u2698\u2698", "color": "#ff8888" }
                 ]
             }, {
                 "startRelativeFrame": 1047,
@@ -97,7 +97,7 @@
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
                     { "text": "", "color": "#ffffbb" },
-                    { "text": "Be there or be square!  /(.□. \\）", "color": "#ffffff" }
+                    { "text": "Be there or be square!  /(.\u25a1. \\\uff09", "color": "#ffffff" }
                 ]
             }]
         }
