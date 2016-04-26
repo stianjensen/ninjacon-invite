@@ -21,8 +21,8 @@ function shipLayer(layer) {
     var loader = new THREE.ObjectLoader();
     that.ship = loader.parse(JSON.parse(response));
     that.ship.scale.set(15, 15, 15);
-    that.ship.position.set(-105, -25, -190);
-    that.scene.add(that.ship);
+    that.ship.position.set(-65, -5, -100);
+    //that.scene.add(that.ship);
   });
 
   this.renderPass = new THREE.RenderPass(this.scene, this.camera);

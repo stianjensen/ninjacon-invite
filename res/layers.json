@@ -8,22 +8,10 @@
     "config": {}
   },
   {
-    "type": "busLayer",
-    "displayName": "Bus",
-    "startFrame": 1751,
-    "endFrame": 2308
-  },
-  {
-    "type": "sharkLayer",
-    "displayName": "Shark",
-    "startFrame": 1501,
-    "endFrame": 1750
-  },
-  {
     "type": "laptopLayer",
     "displayName": "Laptop",
     "startFrame": 1218,
-    "endFrame": 1500
+    "endFrame": 2300
   },
   {
     "type": "superLayer",
@@ -215,49 +203,124 @@
           "startRelativeFrame": 1047,
           "endRelativeFrame": 1202,
           "lines": [
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "Be there or be square!  /(.□. \\）", "color": "#ffffff" }
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "Be there or be square!  /(.□. \\）",
+              "color": "#ffffff"
+            }
           ]
         },
         {
           "startRelativeFrame": 1280,
           "endRelativeFrame": 1500,
           "lines": [
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "Bring your laptop", "color": "#ffffff" }
+            {
+              "text": "",
+              "color": "#ffffff"
+            },
+            {
+              "text": "",
+              "color": "#ffffff"
+            },
+            {
+              "text": "",
+              "color": "#ffffff"
+            },
+            {
+              "text": "",
+              "color": "#ffffff"
+            },
+            {
+              "text": "",
+              "color": "#ffffff"
+            },
+            {
+              "text": "Bring your laptop",
+              "color": "#ffffff"
+            }
           ]
         },
         {
           "startRelativeFrame": 1460,
           "endRelativeFrame": 1750,
           "lines": [
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "Bring your shark", "color": "#ffffff" }
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "Bring your sunglasses",
+              "color": "#ffffff"
+            }
           ]
         },
         {
           "startRelativeFrame": 1710,
           "endRelativeFrame": 2000,
           "lines": [
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "", "color": "#ffffbb" },
-            { "text": "Bring your bus", "color": "#ffffff" }
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "",
+              "color": "#ffffbb"
+            },
+            {
+              "text": "Bring your bus",
+              "color": "#ffffff"
+            }
           ]
         }
       ]
