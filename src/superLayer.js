@@ -75,7 +75,9 @@ superLayer.prototype.resize = function() {
 
 superLayer.prototype.update = function(frame, relativeFrame) {
   if (this.ship) {
-    this.ship.rotation.y = relativeFrame / 100;
+    this.ship.position.x = -3.8;
+    this.ship.position.y = -1.5;
+    this.ship.rotation.y = relativeFrame / 50;
   }
   if (this.shark) {
     this.shark.rotation.y = 1 + relativeFrame / 100;

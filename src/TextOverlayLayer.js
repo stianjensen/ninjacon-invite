@@ -4,6 +4,20 @@
 function TextOverlayLayer(layer) {
   this.config = layer.config;
 
+  if (!document.getElementById('dropyouranchor-font')) {
+    var s = document.createElement('style');
+    s.setAttribute('id', 'dropyouranchor-font');
+    Loader.loadAjax('res/dropyouranchor.base64', function(response) {
+      s.innerHTML = [
+        "@font-face {",
+          "font-family: 'dropyouranchor';",
+          "src: url(data:application/x-font-woff;charset=utf-8;base64," + response + ") format('woff');",
+        "}"
+      ].join('\n');
+    })
+    document.body.appendChild(s);
+  }
+
   this.scene = new THREE.Scene();
   this.camera = new THREE.OrthographicCamera(16 / -2, 16 / 2, 9 / 2, 9 / -2, 1, 1000);
 
@@ -35,34 +49,33 @@ TextOverlayLayer.prototype.end = function() {
 };
 
 TextOverlayLayer.prototype.update = function(frame, relativeFrame) {
-  var flip = +this.config.flip || 0;
-  var offsetX = (flip * 8 + this.config.offset.x) * GU;
-  var offsetY = this.config.offset.y * GU;
 
   this.ctx.clearRect(0, 0, 16 * GU, 9 * GU);
-  this.ctx.fillStyle = this.config.textColor || "white";
 
-  this.ctx.font = (GU | 0) + "px Arial";
-  var step = stepForFrame(relativeFrame, offsetX);
-  this.ctx.fillText(this.config.title, offsetX - step, offsetY);
+  var scale = 1 + 0.01 * Math.sin(relativeFrame / 60 / 60 * 100 * Math.PI * 2);
 
-  if(this.config.strokeColor) {
-    this.ctx.strokeStyle = this.config.strokeColor;
-    this.ctx.lineWidth = GU / 20;
-    this.ctx.strokeText(this.config.title, offsetX - step, offsetY);
-  }
-
-  this.ctx.font = ((GU * 3 / 5) | 0) + "px Arial";
-  for (var i=0; i<this.config.body.length; i++) {
-    var step = stepForFrame(relativeFrame - 10 * i, offsetX);
-    this.ctx.fillText(
-        this.config.body[i], step + offsetX, offsetY + ((1 + i) * GU));
-
-    if(this.config.strokeColor) {
-      this.ctx.strokeStyle = this.config.strokeColor;
-      this.ctx.lineWidth = GU / 30;
-      this.ctx.strokeText(
-          this.config.body[i], step + offsetX, offsetY + ((1 + i) * GU));
+  this.ctx.font = ((GU * 3 / 5 * 0.8 * scale)) + "px dropyouranchor";
+  this.ctx.shadowColor = "black";
+  this.ctx.shadowOffsetX = 2; 
+  this.ctx.shadowOffsetY = 2; 
+  this.ctx.shadowBlur = 2;
+  var yOffsets = [3.55, 4.55, 5.20, 6.05, 6.70, 7.60, 8.30];
+  for(var i = 0; i < this.config.bodies.length; i++) {
+    var body = this.config.bodies[i];
+    if(relativeFrame >= body.endRelativeFrame || relativeFrame < body.startRelativeFrame) {
+      continue;
+    }
+    var relativeRelativeFrame = relativeFrame - body.startRelativeFrame;
+    var counter = relativeRelativeFrame / 3.5 | 0;
+    for(var j = 0; j < body.lines.length; j++) {
+      var line = body.lines[j];
+      if(line.length == 0) {
+        continue;
+      }
+      this.ctx.fillStyle = line.color;
+      var cursor = '';
+      this.ctx.fillText(line.text.slice(0, Math.max(counter, 0)).toUpperCase() + cursor, 8 * GU, yOffsets[j] * GU);
+      counter -= line.text.length;
     }
   }
 
@@ -72,10 +85,4 @@ TextOverlayLayer.prototype.update = function(frame, relativeFrame) {
 TextOverlayLayer.prototype.resize = function() {
   this.canvas.width = 16 * GU;
   this.canvas.height = 9 * GU;
-}
-
-function stepForFrame(frame, offsetX) {
-  return smoothstep(-16 * GU, 0, (frame - 2 * 60) / 40) +
-    lerp(-offsetX / 2, offsetX / 4, (frame - 1 * 60) / 400) +
-    smoothstep(0, 16 * GU, (frame - 6 * 60) / 40);
 }

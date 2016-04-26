@@ -1,29 +1,105 @@
 [
-  {
-    "type": "superLayer",
-    "displayName": "Super",
-    "startFrame": 0,
-    "endFrame": 1000,
-    "color": "red",
-    "config": {}
-  },
-  {
-    "type": "TextOverlayLayer",
-    "displayName": "Welcome",
-    "startFrame": 200,
-    "endFrame": 600,
-    "color": "red",
-    "config": {
-      "offset": {
-        "x": -1,
-        "y": 3
-      },
-      "flip": true,
-      "title": "Welcome to",
-      "body": [
-        "Ninjacon!",
-        "~ A place of happiness ~"
-      ]
+    {
+        "type": "superLayer",
+        "displayName": "Super",
+        "startFrame": 0,
+        "endFrame": 2552,
+        "color": "red",
+        "config": {}
+    },
+    {
+        "type": "BGOverlayLayer",
+        "displayName": "BG",
+        "startFrame": 0,
+        "endFrame": 2552,
+        "color": "brown",
+        "config": {}
+    },
+    {
+        "type": "TextOverlayLayer",
+        "displayName": "Welcome",
+        "startFrame": 12,
+        "endFrame": 2805,
+        "color": "red",
+        "config": {
+            "bodies": [{
+                "startRelativeFrame": 0,
+                "endRelativeFrame": 373,
+                "lines": [
+                    { "text": "", "color": "black" },
+                    { "text": "Ninjadev cordially invites you", "color": "yellow"},
+                    { "text": "and your friends to come to:", "color": "yellow"},
+                    { "text": "", "color": "yellow" },
+                    { "text": "☆ Ninjacon 2016: Sea Shark ☆", "color": "#00ff00"}
+                ]
+            }, {
+                "startRelativeFrame": 380,
+                "endRelativeFrame": 670,
+                "lines":[
+                    { "text": "", "color": "yellow" },
+                    { "text": "Enjoy a weekend of", "color": "yellow" },
+                    { "text": "hacking and fun at", "color": "yellow" },
+                    { "text": "Jordalsgrenda", "color": "#00ff00" },
+                    { "text": "29. April - 1. May", "color": "#00ff00" }
+                ]
+            }, {
+                "startRelativeFrame": 690,
+                "endRelativeFrame": 1186,
+                "lines":[
+                    { "text": "You can experience:                       ", "color": "white" },
+                    { "text": "Intriguing talks ✌✌", "color": "yellow" }
+                ]
+            }, {
+                "startRelativeFrame": 794,
+                "endRelativeFrame": 1190,
+                "lines":[
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "          ❤ Scrumptious food ❤", "color": "#ff00ff" }
+                ]
+            }, {
+                "startRelativeFrame": 859,
+                "endRelativeFrame": 1194,
+                "lines":[
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "    ❅ Tittilating code golf ❅", "color": "#8888ff" }
+                ]
+            }, {
+                "startRelativeFrame": 909,
+                "endRelativeFrame": 1194,
+                "lines":[
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": " Veritable hacking  ☜(⌒▽⌒)☞", "color": "#00ff00" }
+                ]
+            }, {
+                "startRelativeFrame": 948,
+                "endRelativeFrame": 1200,
+                "lines":[
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "       ⚘⚘ Real Fresh Air™ ⚘⚘", "color": "#ff8888" }
+                ]
+            }, {
+                "startRelativeFrame": 1047,
+                "endRelativeFrame": 1202,
+                "lines":[
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "", "color": "yellow" },
+                    { "text": "Be there or be square!  /(.□. \\）", "color": "#ffffff" }
+                ]
+            }]
+        }
     }
-  }
 ]
