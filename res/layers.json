@@ -44,25 +44,25 @@
   {
     "type": "TextOverlayLayer",
     "displayName": "Welcome",
-    "startFrame": 12,
+    "startFrame": 0,
     "endFrame": 2805,
     "color": "red",
     "config": {
       "bodies": [
         {
           "startRelativeFrame": 0,
-          "endRelativeFrame": 373,
+          "endRelativeFrame": 430,
           "lines": [
             {
               "text": "",
               "color": "black"
             },
             {
-              "text": "Ninjadev cordially invites you",
+              "text": " Ninjadev cordially invites you",
               "color": "#ffffbb"
             },
             {
-              "text": "and your friends to come to:",
+              "text": "  and your friends to come to:",
               "color": "#ffffbb"
             },
             {
@@ -70,33 +70,33 @@
               "color": "#ffffbb"
             },
             {
-              "text": "☆ Ninjacon 2016: Sea Shark ☆",
+              "text": "  ☆ Ninjacon 2016: Sea Shark ☆",
               "color": "#88ff88"
             }
           ]
         },
         {
-          "startRelativeFrame": 380,
-          "endRelativeFrame": 670,
+          "startRelativeFrame": 420,
+          "endRelativeFrame": 830,
           "lines": [
             {
               "text": "",
               "color": "#ffffbb"
             },
             {
-              "text": "Enjoy a weekend of",
+              "text": "      Enjoy a weekend of",
               "color": "#ffffbb"
             },
             {
-              "text": "hacking and fun at",
+              "text": "       hacking and fun at",
               "color": "#ffffbb"
             },
             {
-              "text": "       Jordalsgrenda",
+              "text": "         Jordalsgrenda",
               "color": "#88ff88"
             },
             {
-              "text": "    29. April - 1. May",
+              "text": "        29. April - 1. May",
               "color": "#88ff88"
             }
           ]
@@ -106,7 +106,7 @@
           "endRelativeFrame": 1186,
           "lines": [
             {
-              "text": "You can experience:                       ",
+              "text": "                                          ",
               "color": "white"
             },
             {
@@ -215,34 +215,49 @@
           "startRelativeFrame": 1047,
           "endRelativeFrame": 1202,
           "lines": [
-            {
-              "text": "",
-              "color": "#ffffbb"
-            },
-            {
-              "text": "",
-              "color": "#ffffbb"
-            },
-            {
-              "text": "",
-              "color": "#ffffbb"
-            },
-            {
-              "text": "",
-              "color": "#ffffbb"
-            },
-            {
-              "text": "",
-              "color": "#ffffbb"
-            },
-            {
-              "text": "",
-              "color": "#ffffbb"
-            },
-            {
-              "text": "Be there or be square!  /(.□. \\）",
-              "color": "#ffffff"
-            }
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "Be there or be square!  /(.□. \\）", "color": "#ffffff" }
+          ]
+        },
+        {
+          "startRelativeFrame": 1280,
+          "endRelativeFrame": 1500,
+          "lines": [
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "Bring your laptop", "color": "#ffffff" }
+          ]
+        },
+        {
+          "startRelativeFrame": 1460,
+          "endRelativeFrame": 1750,
+          "lines": [
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "Bring your shark", "color": "#ffffff" }
+          ]
+        },
+        {
+          "startRelativeFrame": 1710,
+          "endRelativeFrame": 2000,
+          "lines": [
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "", "color": "#ffffbb" },
+            { "text": "Bring your bus", "color": "#ffffff" }
           ]
         }
       ]
