@@ -11,8 +11,40 @@ function superLayer(layer) {
   light.position.set( 500, 300, 500 );
   this.light = light;
   this.scene.add(light);
-
   this.scene.add(new THREE.AmbientLight(0x404040));
+
+  var partialCubeResources = [
+      {image: new Image(), src: 'res/px.jpg'},
+      {image: new Image(), src: 'res/nx.jpg'},
+      {image: new Image(), src: 'res/py.jpg'},
+      {image: new Image(), src: 'res/ny.jpg'},
+      {image: new Image(), src: 'res/pz.jpg'},
+      {image: new Image(), src: 'res/nz.jpg'}
+  ];
+  var loadedCount = 0;
+  var cubemap = new THREE.CubeTexture(partialCubeResources.map(function(item) {return item.image;}));
+  for(var i = 0; i < partialCubeResources.length; i++) {
+    Loader.load(partialCubeResources[i].src, partialCubeResources[i].image, function() {
+      loadedCount++;
+      if(loadedCount == 6) {
+        cubemap.needsUpdate = true;
+      }
+    });
+  }
+
+  this.discoball = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1, 4),
+    new THREE.MeshStandardMaterial({
+      shading: THREE.FlatShading,
+      metalness: 1,
+      roughness: 0.2,
+      emissive: 0x222222,
+      envMap: cubemap
+    }));
+  this.scene.add(this.discoball);
+  var scale = 50;
+  this.discoball.scale.set(scale, scale, scale);
+  this.discoball.position.set(0, 10, 0);
 
 
   var pointLight = new THREE.PointLight(0xFFFFFF);
@@ -37,24 +69,18 @@ function superLayer(layer) {
     this.render2(renderer, writeBuffer, readBuffer, delta);
   };
 
-  var names = [
-      'res/px.jpg',
-      'res/nx.jpg',
-      'res/py.jpg',
-      'res/ny.jpg',
-      'res/pz.jpg',
-      'res/nz.jpg'
-  ];
   var skyGeometry = new THREE.BoxGeometry(1000000, 1000000, 1000000);
 
-  var materialArray = [];
-  for (var i = 0; i < 6; i++) {
-    materialArray.push(new THREE.MeshBasicMaterial({
-      map: Loader.loadTexture(names[i]),
-      side: THREE.BackSide
-    }));
-  }
-  var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+  var cubeShader = THREE.ShaderLib.cube;
+  var cubeUniforms = THREE.UniformsUtils.clone(cubeShader.uniforms);
+  cubeUniforms.tCube.texture = cubemap;
+  var skyMaterial = new THREE.ShaderMaterial({
+    fragmentShader: cubeShader.fragmentShader,
+    vertexShader: cubeShader.vertexShader,
+    uniforms: cubeUniforms,
+    side: THREE.BackSide
+  });
+          
   var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
   this.scene.add(skyBox);
 
@@ -97,6 +123,9 @@ superLayer.prototype.update = function(frame, relativeFrame) {
   this.camera.position.x = 200 * Math.sin(frame / 1000 + (frame - 1200) * speedUp);
   this.camera.position.z = 200 * Math.cos(frame / 1000 + (frame - 1200) * speedUp);
   this.camera.lookAt(this.cameraLookAt);
+
+  this.discoball.position.y = smoothstep(-100, 100, (relativeFrame - 1200) / 200);
+  this.discoball.rotation.z = relativeFrame / 170;
 
   if(BEAT && BEAN % 6 == 0) {
     this.light.intensity = 1;

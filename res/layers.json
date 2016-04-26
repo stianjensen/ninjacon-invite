@@ -234,8 +234,8 @@
           ]
         },
         {
-          "startRelativeFrame": 1280,
-          "endRelativeFrame": 1500,
+          "startRelativeFrame": 1480,
+          "endRelativeFrame": 1700,
           "lines": [
             {
               "text": "",
@@ -264,8 +264,8 @@
           ]
         },
         {
-          "startRelativeFrame": 1460,
-          "endRelativeFrame": 1750,
+          "startRelativeFrame": 1660,
+          "endRelativeFrame": 1950,
           "lines": [
             {
               "text": "",
@@ -294,8 +294,8 @@
           ]
         },
         {
-          "startRelativeFrame": 1710,
-          "endRelativeFrame": 2000,
+          "startRelativeFrame": 1910,
+          "endRelativeFrame": 2200,
           "lines": [
             {
               "text": "",

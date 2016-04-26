@@ -15,7 +15,7 @@ function laptopLayer(layer) {
   Loader.loadAjax('res/laptop.obj', function(response) {
     that.laptop = objLoader.parse(response);
     that.laptop.position.set(0, -10, 0);
-    var scale = 4;
+    var scale = 3;
     that.laptop.scale.set(scale, scale, scale);
     that.laptop.rotation.z = -0.5;
     that.scene.add(that.laptop);
@@ -37,7 +37,7 @@ laptopLayer.prototype.getEffectComposerPass = function() {
 
 laptopLayer.prototype.update = function(frame, relativeFrame) {
   if (this.laptop) {
-    var relrelframe = relativeFrame;
+    var relrelframe = relativeFrame - 200;
     var speedup = smoothstep(0.1, 4, relrelframe / 200);
     this.laptop.position.x = smoothstep(200, 0, relrelframe / 100);
     this.laptop.rotation.y = relrelframe / 100 + speedup * relrelframe / 100;
@@ -46,7 +46,7 @@ laptopLayer.prototype.update = function(frame, relativeFrame) {
     }
   }
   if(this.sunglasses) {
-    var relrelframe = relativeFrame - 230;
+    var relrelframe = relativeFrame - 430;
     var speedup = smoothstep(0.1, 4, relrelframe / 200);
     this.sunglasses.position.x = smoothstep(200, -10, relrelframe / 100);
     this.sunglasses.rotation.x = 0.1 * Math.sin(relrelframe / 100 + speedup * relrelframe / 100);
