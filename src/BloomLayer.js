@@ -15,7 +15,7 @@ BloomLayer.prototype.update = function(frame) {
   if(this.stab < 0.1) {
     this.stab = 0;
   }
-  if(BEAT && BEAN % 6 == 0) {
+  if(BEAT && BEAN % 6 == 0 && frame < 2311) {
     this.stab = 1;
   }
 
