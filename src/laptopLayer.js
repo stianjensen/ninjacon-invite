@@ -24,6 +24,11 @@ function laptopLayer(layer) {
   Loader.loadAjax('res/Sunglasses.obj', function(response) {
     that.sunglasses = objLoader.parse(response);
     var scale = 0.2;
+    that.sunglasses.traverse(function(child) {
+      if(child.material) {
+        child.material.shading = THREE.SmoothShading;
+      }
+    });
     that.sunglasses.scale.set(scale, scale, scale);
     that.sunglasses.position.set(0, 2, 0);
     that.scene.add(that.sunglasses);
@@ -64,7 +69,7 @@ laptopLayer.prototype.update = function(frame, relativeFrame) {
     }
   }
   if(this.bottle) {
-    var relrelframe = relativeFrame - 680;
+    var relrelframe = relativeFrame - 660;
     var speedup = smoothstep(0.1, 4, relrelframe / 200);
     this.bottle.position.x = smoothstep(200, -10, relrelframe / 100);
     this.bottle.rotation.y =  0.3 * Math.sin(relrelframe / 100 + speedup * relrelframe / 100);

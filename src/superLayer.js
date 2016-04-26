@@ -178,4 +178,12 @@ superLayer.prototype.update = function(frame, relativeFrame) {
   } else {
     this.scene.add(this.discoballrays);
   }
+
+  if(BEAN >= 420 && BEAN < 444) {
+    this.camera.fov = 35;
+  } else {
+    this.camera.fov = 65;
+  }
+  this.camera.updateProjectionMatrix();
+
 };
