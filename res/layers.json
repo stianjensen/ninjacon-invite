@@ -325,5 +325,23 @@
         }
       ]
     }
+  },
+  {
+    "type": "BloomLayer",
+    "displayName": "Bloom",
+    "startFrame": 0,
+    "endFrame": 2600,
+    "color": "red",
+    "config": {
+      "amount": 1.5
+    }
+  },
+  {
+    "type": "multiplyLayer",
+    "displayName": "multiply",
+    "startFrame": 0,
+    "endFrame": 2600,
+    "color": "pink",
+    "config": {}
   }
 ]
