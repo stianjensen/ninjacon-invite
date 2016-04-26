@@ -57,20 +57,20 @@ BGOverlayLayer.prototype.update = function(frame, relativeFrame) {
     positionX += doubleBounce * 20;
   }
 
-  if(BEAN >= 304 && BEAN < 307) {
+  if(BEAN >= 354 && BEAN < 357) {
     rotationZ += 0.05;
     scaleX *= 1.1;
     scaleY *= 1.1;
     positionY -= 1;
   }
-  if(BEAN >= 307 && BEAN < 310) {
+  if(BEAN >= 357 && BEAN < 360) {
     rotationZ -= 0.05;
     scaleX *= 1.1;
     scaleY *= 1.1;
     positionY -= 1;
   }
 
-  if(BEAN >= 361 && BEAN < 381) {
+  if(BEAN >= 420 && BEAN < 444) {
     scaleX *= 1.1;
     scaleY *= 1.1;
     positionY *= 1.1;

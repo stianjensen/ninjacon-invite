@@ -52,9 +52,9 @@ TextOverlayLayer.prototype.update = function(frame, relativeFrame) {
 
   this.ctx.clearRect(0, 0, 16 * GU, 9 * GU);
 
-  var scale = 1 + 0.01 * Math.sin(relativeFrame / 60 / 60 * 100 * Math.PI * 2);
+  var scale = 1 + 0.005 * Math.sin(relativeFrame / 60 / 60 * 100 * Math.PI * 2);
 
-  this.ctx.font = ((GU * 3 / 5 * 0.8 * scale)) + "px dropyouranchor";
+  this.ctx.font = ((GU * 3 / 5 * 0.8 * scale * 1.1)) + "px dropyouranchor";
   this.ctx.shadowColor = "black";
   this.ctx.shadowOffsetX = 2; 
   this.ctx.shadowOffsetY = 2; 
