@@ -30,6 +30,10 @@ BGOverlayLayer.prototype.end = function() {
 };
 
 BGOverlayLayer.prototype.update = function(frame, relativeFrame) {
+  if(frame == 2544) {
+    demo.jumpToFrame(0);
+    return;
+  }
   var progress = Math.max((relativeFrame - 1210) / 35, 0);
   var scaleX = smoothstep(1, 2, progress);
   var scaleY = smoothstep(1, 2, progress);
