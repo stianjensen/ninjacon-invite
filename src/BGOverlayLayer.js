@@ -34,9 +34,14 @@ BGOverlayLayer.prototype.update = function(frame, relativeFrame) {
     demo.jumpToFrame(0);
     return;
   }
+
+  var firstThrob = 1 + 0.005 + 0.005 * Math.sin(relativeFrame / 60 / 60 * 100 * Math.PI * 2 / 4);
+  var scaleX = firstThrob;  
+  var scaleY = firstThrob;  
+
   var progress = Math.max((relativeFrame - 1210) / 35, 0);
-  var scaleX = smoothstep(1, 2, progress);
-  var scaleY = smoothstep(1, 2, progress);
+  scaleX = smoothstep(scaleX, 2, progress);
+  scaleY = smoothstep(scaleY, 2, progress);
   var rotationZ = smoothstep(0, -Math.PI / 2, progress - 0.5);
   var positionY = smoothstep(0, -8.2, progress - 1);
   var positionX = smoothstep(0, 0.82, progress - 1);
