@@ -1,5 +1,23 @@
 [
     {
+        "type": "busLayer",
+        "displayName": "Bus",
+        "startFrame": 2000,
+        "endFrame": 3000
+    },
+    {
+        "type": "sharkLayer",
+        "displayName": "Shark",
+        "startFrame": 1518,
+        "endFrame": 2000
+    },
+    {
+        "type": "laptopLayer",
+        "displayName": "Laptop",
+        "startFrame": 940,
+        "endFrame": 1562
+    },
+    {
         "type": "superLayer",
         "displayName": "Super",
         "startFrame": 0,
