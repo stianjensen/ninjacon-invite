@@ -139,7 +139,11 @@ superLayer.prototype.update = function(frame, relativeFrame) {
   if(BEAT && BEAN % 6 == 0) {
     this.light.intensity = 1;
   }
-  this.light.intensity *= 0.98;
+  this.light.intensity *= 0.99;
+  if(frame < 1250) {
+    this.light.intensity = 1;
+  }
+  this.water.sunColor.setRGB(this.light.intensity, this.light.intensity, this.light.intensity);
   if (this.ship) {
     this.ship.rotation.y = relativeFrame / 500;
   }
