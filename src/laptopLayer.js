@@ -82,11 +82,11 @@ laptopLayer.prototype.update = function(frame, relativeFrame) {
     }
   }
   if(this.bottle) {
-    var relrelframe = relativeFrame - 480;
+    var relrelframe = relativeFrame - 680;
     var speedup = smoothstep(0.1, 4, relrelframe / 200);
     this.bottle.position.x = smoothstep(200, -10, relrelframe / 100);
     this.bottle.rotation.y =  0.3 * Math.sin(relrelframe / 100 + speedup * relrelframe / 100);
-    this.bottle.rotation.x = -Math.PI/2;// + 0.1 * Math.sin(relrelframe / 100 + speedup * relrelframe / 100);
+    this.bottle.rotation.x = -Math.PI/2;
     if(relrelframe > 250) {
       this.bottle.position.x = smoothstep(-10, -200, (relrelframe - 250) / 100);
     }
