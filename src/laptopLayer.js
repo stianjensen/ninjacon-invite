@@ -14,8 +14,8 @@ function laptopLayer(layer) {
   var that = this;
   Loader.loadAjax('res/laptop.obj', function(response) {
     that.laptop = objLoader.parse(response);
-    that.laptop.position.set(0, -1, 90);
-    that.laptop.scale.set(0.1, 0.1, 0.1);
+    that.laptop.position.set(0, -1, 70);
+    that.laptop.scale.set(0.5, 0.5, 0.5);
     that.laptop.rotation.z = -0.5;
     that.scene.add(that.laptop);
   });

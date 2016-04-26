@@ -14,8 +14,8 @@ function sharkLayer(layer) {
   var that = this;
   Loader.loadAjax('res/shark.obj', function(response) {
     that.shark = objLoader.parse(response);
-    that.shark.position.set(-3, 0, 90);
-    that.shark.scale.set(0.001, 0.001, 0.001);
+    that.shark.position.set(0, -3, 70);
+    that.shark.scale.set(0.005, 0.005, 0.005);
     that.scene.add(that.shark);
   });
 

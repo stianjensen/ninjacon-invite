@@ -37,14 +37,6 @@ function superLayer(layer) {
     this.render2(renderer, writeBuffer, readBuffer, delta);
   };
 
-  var that = this;
-  Loader.loadAjax('res/pirate-ship-giant.json', function(response) {
-    var loader = new THREE.ObjectLoader();
-    that.ship = loader.parse(JSON.parse(response));
-    that.ship.scale.set(20, 20, 20);
-    that.scene.add(that.ship);
-  });
-
   var names = [
       'res/px.jpg',
       'res/nx.jpg',
@@ -114,7 +106,4 @@ superLayer.prototype.update = function(frame, relativeFrame) {
     this.light.intensity = 1;
   }
   this.water.sunColor.setRGB(this.light.intensity, this.light.intensity, this.light.intensity);
-  if (this.ship) {
-    this.ship.rotation.y = relativeFrame / 500;
-  }
 };

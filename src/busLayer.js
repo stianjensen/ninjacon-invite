@@ -27,8 +27,8 @@ function busLayer(layer) {
     that.bus.traverse(function(child) {
       child.material = orangeMaterial;
     });
-    that.bus.position.set(-3, -1, 90);
-    that.bus.scale.set(0.01, 0.01, 0.01);
+    that.bus.position.set(0, -3, 70);
+    that.bus.scale.set(0.05, 0.05, 0.05);
     that.scene.add(that.bus);
   });
 
