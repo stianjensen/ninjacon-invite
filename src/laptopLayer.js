@@ -28,31 +28,13 @@ function laptopLayer(layer) {
     that.sunglasses.position.set(0, 2, 0);
     that.scene.add(that.sunglasses);
   });
-  var bottleContainer = {};
-  Loader.loadAjax('res/bottle.mtl', function(response) {
-    bottleContainer.mtl = response;
-    if (bottleContainer.obj) {
-      finishBottleLoading(bottleContainer);
-    }
-  });
   Loader.loadAjax('res/bottle.obj', function(response) {
-    bottleContainer.obj = response;
-    if (bottleContainer.mtl) {
-      finishBottleLoading(bottleContainer);
-    }
-  });
-
-  function finishBottleLoading(bottleContainer) {
-    var bottleMaterialCreator = mtlLoader.parse(bottleContainer.mtl);
-    bottleMaterialCreator.preload();
-
-    objLoader.setMaterials(bottleMaterialCreator);
-    that.bottle = objLoader.parse(bottleContainer.obj);
+    that.bottle = objLoader.parse(response);
     var scale = 2;
     that.bottle.scale.set(scale, scale, scale);
     that.bottle.position.set(0, -20, 0);
     that.scene.add(that.bottle);
-  }
+  });
 
   this.renderPass = new THREE.RenderPass(this.scene, this.camera);
 }
